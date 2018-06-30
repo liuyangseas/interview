@@ -1,0 +1,52 @@
+**Algorithms**
+1. generate random number within a range [begin, end) without duplicate until you have all numbers from the range
+eg 1 to 5
+call 6 times: 2 3 1 4 5 3 前5个数不能有重复，直到第6个
+
+Follow up:
+If user want to give a new range, how to change your code?
+old range 1 to 5
+new range 2 to 6
+
+you generate 3,2, then you set new range, then you should output 4,3,6,5(randdom) but not 2 because you already use it in the previous round and you didn't hit the end of the round
+After 4,3,6,5, next new round begin.
+
+When you resize the range, you still cannot output old output number until you hit the end of the round.
+
+解法： 这里应该是一个sampling的算法来求均匀的求平均数
+
+
+2.coding是写个iterator 输入是另一个iterator 数据都是整型。。。
+
+3.算法题。实现2个方程，set(key, weight), next(). set把key加到数据结构里，weight可以是floating point，next根据weight随即返回一个key. set如果key之前有过可以改weight。基本就是 weighted random sampling with replacement
+    楼主立马想到维持一个interval list， 然后用rand(0, total_weight)生成一个数字， 然后用这个数字二插在interval里找。这样next是O(logn). 但是要更新 weight的话要O(n)。
+    和面试官讨论， 他让我写， 写完让我跑test case， 结果二插写的有bug, 跑不动。然后面试官在时间快到的时候告诉我有更快的办法;(   用segment tree，set和next都是lgn
+	
+4.Given a stream of numbers, 怎么实时计算average， standard deviation, median?
+       Followup: 怎么找出largest（smallest） K% elements？
+	   
+5. Leetcode57 Union Find
+
+6.第二题 string chain.
+给你一个字典。 每次从字典里抓一个string出来remove 一个 字符 得下一个 string， 这个string 也在字典里， 以此往复。 求string chain 最长长度。. 留学申请论坛-一亩三分地
+[abc, ca, agds, d, a , ab]
+abc -> ab -> a
+trie tree  + (dp + memorization) 。
+
+7.实现一个calculator，包含加减乘除括号，比如算"3+(2+1*4)/5"
+
+8.让先实现逆波兰表达式就是lc150
+
+9.track the median of a stream of data   一上来就说用two heap
+
+10. 57. Insert Interval
+
+http://blog.gainlo.co/index.php/2016/11/11/uber-interview-question-weighted-random-numbers/
+
+https://oroboro.com/non-uniform-random-numbers/
+
+11.  实现自定义 iterator，逢5的倍数输出，实现 next() 和 hasNext()
+
+
+
+

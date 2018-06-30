@@ -1,0 +1,164 @@
+**Java Basic**
+
+1. Map, List, Set
+2. Garbage Collector
+3. Immutable
+4. Spring
+5. Hash map
+6. Multi Thread
+    a.Context Switch
+7. Final/Static/Protect/Private
+8. String literal vs. String object
+9. JVM/JRE/JDK
+10. Array vs. ArrayList
+11. Servlet vs. Applet
+12. String to int
+13. Heap
+14. Abstract Class vs. Interface
+
+**DataBase**
+
+15. relational database的实现
+16. SQL vs. NoSQL
+17. CAP
+18. Redis 和 Memcache的区别
+19. Slow queries 慢查询优化
+20. Strong/Casual/Weak consistency
+
+**Algorithms**
+
+21. Anagram 
+  i. https://leetcode.com/problems/valid-anagram/description/
+  ii. https://leetcode.com/problems/find-all-anagrams-in-a-string/description/
+  iii. https://leetcode.com/problems/group-anagrams/description/
+
+22. Tree
+  i. Sum of non-leaf nodes in a tree
+      i. https://www.geeksforgeeks.org/count-non-leaf-nodes-binary-tree/
+      ii. https://www.geeksforgeeks.org/sum-leaf-nodes-binary-tree/
+  ii. Level order traversal
+  iii. Check balance
+  iv. Path Sum https://leetcode.com/problems/path-sum/description/ 
+  v. LCA
+    a. https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/description/
+    b. https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/description/
+    
+23. First non-repeating character in a list +2
+  i. https://www.geeksforgeeks.org/given-a-string-find-its-first-non-repeating-character/
+  ii. First non-repeatable element in array
+  iii. Find unique numbers in a list +2
+  
+24. Top k element
+  i. Top k frequent element (Top k frequent word appears in a file)
+  
+25. Reverse linkedList
+  i. https://leetcode.com/problems/reverse-linked-list/description/
+  ii. https://leetcode.com/problems/reverse-linked-list-ii/description/
+
+26. Combination
+  i. Combination Sum 
+     https://leetcode.com/problems/combination-sum/description/ 
+  ii. Letter Combination of Phone Number 
+     https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/
+     
+27. Subarray with at most k distinct character
+  i. https://aaronice.gitbooks.io/lintcode/content/two_pointers/longest_substring_with_at_most_k_distinct_characters.html
+  ii. https://zhengyang2015.gitbooks.io/lintcode/longest_substring_with_at_most_k_distinct_characte.html
+  iii. 找到包含不重复单词的最长sequence
+       举个例子 List<String> words: cars, turtles, cats, rats, dogs, rabitts,
+       要求返回 List<String> 例子要返回turtles, cats, rats, dogs, rabitts,...
+       因为第一个单词和第三个单词都是cats，所以要把第一个cats丢掉
+       写的代码用的for loop里套while loop，双指针加set。
+       
+28. Quick Sort +3
+
+29. Calculator, eg. 3 + 5 * 6 * (4 + 3) +2
+    i. String expression ((2+3)*(5*4))
+    
+30. Decode String 
+    https://leetcode.com/problems/decode-string/description/
+
+31. Number of Islands +2 https://leetcode.com/problems/number-of-islands/description/
+
+32. LRU https://leetcode.com/problems/lru-cache/description/
+
+33. Basic Binary Search +2
+  i. Find the first missing number in the sorted array (eg. [10,11,12,13,15] => 14)
+  
+34. Merge intervals +3
+  i. https://leetcode.com/problems/merge-intervals/description/ 
+  ii. https://leetcode.com/problems/data-stream-as-disjoint-intervals/description/
+  
+35. String to int
+
+36. Max Profit 
+    https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/
+    
+37. Merge unsorted linked list
+
+38. Valid Parenthesis 
+    https://leetcode.com/problems/valid-parentheses/submissions/1 
+    
+39. Find Duplicate Number in a list 
+    https://leetcode.com/problems/find-the-duplicate-number/description/
+    
+40. Search Target in a rotated array
+
+41. Insert Delete GetRandom O(1) 
+    https://leetcode.com/problems/insert-delete-getrandom-o1/description/
+    
+42. Topological Sorting of Directed Graph
+    https://www.geeksforgeeks.org/topological-sorting/
+    
+43. Sum of number in a string (eg. a107b7hdgjdhgjd8 => 107 + 7 + 8 = 122)
+
+**Other**
+
+44. OOAD
+
+45. Design Pattern
+  a. Factory (What open source projects use Factory methods)
+  b. Singleton +3
+  c. Observer 
+  d. Builder +3
+  e. Producer Consumer
+  f. Adaptor
+  
+46. System design
+  a. Tiny URL
+  b. Vending Machine
+  c. Library System
+  d. KV Store
+  e. Pizza Order System
+  f. 设计一个Payment Service的话你会怎么做，用户post payment request, backend compute the logic and return a result，
+      访问量很大的话该怎么办？不用Message Queue怎样设计，用了Message Queue怎样设计？用Message Queue的最大好处是什么？
+  g. Design Chess Game
+  
+47. RESTful API + 2
+  a. CRUD operations on employee.
+    ```
+      employee: {
+        firstName;
+        lastName;
+        addresses:[
+          {
+            street,
+            city,
+            zip,
+            country,
+            type:['HOME','OFFICE']
+          }
+        ]
+      }
+    ```
+    i. Define the endpoints
+    ii. request/response
+    iii. possible http return codes
+    iv. error response
+    v. security
+    vi. pagination
+  b. https://restful.io/an-introduction-to-api-s-cee90581ca1b 
+  
+48. Software Lifecycle
+
+49. Version control

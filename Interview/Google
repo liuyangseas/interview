@@ -1,0 +1,47 @@
+1. topological sorting 
+2. max sorted chuncks
+3. 扫描线 rectangle,线段树
+
+
+Tree:
+1. 输出一颗树的 max level sum，不是二叉树。先让我定义 TreeNode 该怎么定义，顺带问问成员变量的访问权限。然后就用层序遍历秒了
+2. Constrcuted BST
+3. binary search tree，找一个数，还有inorder这个bst
+
+Binary Search:
+1. 查找一串值是不是在一列 interval 里，interval 没有重叠并且排好了序。我表示 binary search 就可以
+
+DP:
+1. 一堆卡片从一头拿，可以拿一二三张，两人轮流拿，求最高得分。
+
+高频：
+1. 自行车那题
+2. 扫地机器人
+3. 华容道游戏，全程在跟我讨论怎么表示board，每个方块，不同的方法表示board的当前情况需要多少空间字节。知道最后才问我，给定一个初值值怎么解这个游戏，
+我差点崩溃了..说dfs可以解，大概就是记录当天board的状态，然后找当前board有几种可能的move方式，然后根据这几种方式move生成新board这样dfs下去知道发现一个解
+4. 一个房间四面镜子，左下角有雷达发射器，其余三角有三个接收器，给发射器发射的方位，问哪一个接收器最先接收到信号
+
+Priority Queue：
+1. 背景是假设现在有个火车站台（可以看做一维的array）上面已经有一些人站着，站着的点就算作occupied，想让新进入站台的人能够站到一个离现在站台上所有其他人都最远的点，请问要怎么解决。
+我简化了一下，其实就是梳理一下当前站台上人与人之间的gap，以int[2]的方式存到priorityQueue里，每次进来人就去pq中gap距离最大的，讲这个gap二分成两个小gap加回pq
+follow up是如果给你的初始站台是空的，问题会不会简化？当然会，可以直接按照二分法安排进来人的位置。
+2. maxheap找前k个大的数，直接pop应该是klogn，怎么优化Time
+
+Graph:
+1. 现在有一个图，包括很多node, 其中一些node 是可以pass的，一些是deadend，有一个表示终点，然后要求1.判断能否有从指定node开始到达终点的path，2.如果有请输出path
+       1 (start)
+     /    \    \. 1point3acres
+  3       4     2 -----6 (dead
+(dead)  |
+           5 (终点）
+图大概就是这样，很简单...
+
+List:
+1. 83. Remove Duplicates from Sorted List
+
+BFS:
+1. 两地之间有很多加油站，怎么走使停靠次数最少，BFS做的
+
+Array:
+1. 给一个array找local minimum
+
