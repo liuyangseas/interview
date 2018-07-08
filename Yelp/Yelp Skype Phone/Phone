@@ -1,0 +1,95 @@
+** Algorithm **
+   ** Bit Manipulation **
+   136. Single Number
+
+   ** backtrcking **
+   1. 给a-z里的几个字母，打出所有它大小写不同的组合。例如 abc，就有abc, acb,bca, Abc...之类的
+   79 (Word Search)
+   78. Subsets
+   254. Factor Combinations
+   
+   
+   ** ListNode **
+   Given a random node from a sorted circular singly linked list with distinct integer elements, insert a new number K into the linked list in its sorted order and return its node. 主要要注意“链表为空”，“链表只有一个元素”，和“新元素将是链表中最大/最小”这几个情况。
+   
+   ** DP **
+   1. 64. Minimum Path Sum
+   300. Longest Increasing Subsequence   also Binary Search
+   139. Word Break
+   
+   ** Sort **
+   56. Merge Intervals
+   说明[5,0]里5是指这个人(假如这个人叫A)的身高,0指的是A这个人前面的 身高>= A 的人的个数。 再比如说[4,4] 假如他叫B,实际上B身高为4, B前面有4个人身高 >= B的身高.
+           Input: [[5,0], [4,4], [5,2], [7,0], [7,1], [6,1]]
+           Output: [[5,0], [7,0], [5,2], [6,1], [4, 4], [7,1]]
+   topological sort，这个是在一个在线的idea里面写的，也就是说是可以编译 运行，如果没有写过，最好提前准备一下。
+   给list of movies，每个movie有name和一个list of times. visit 1point3acres for more.
+   要求找出能看每个电影的时间组合，没有的话throw exception，我用的DFS
+   692. Top K Frequent Words
+   给一堆package，每个package安装有自己的dependency，然后根据这些dependency来决定安装package的顺序。告诉三姐我决定用拓扑排序来做
+   210. Course Schedule II
+   269. Alien Dictionary
+   
+    把yelp 公司架构用N-child tree 实现。给你一个List<List<String>> list,  返回整个公司架构图，这里Alice是root， Ben是Alice的reportee， 一个Node可以有1～N 个子节点reportees， 公司人名不会重复。
+
+Given: [
+    [Alice, Ben],
+    [Ben, Charles],
+    [Ben, Denis]
+]
+
+Output：Alice
+            |
+          Ben
+       /        \.1point3acres网
+  Charles    Denis
+
+这是一个graph问题。关键点是找到root Node代表的那个人的名字（string），剩下的就是遍历graph了。
+   
+   ** HashTable **
+   49. Group Anagrams
+   202. Happy Number
+   
+   ** Deque or Head? **
+   239. Sliding Window Maximum
+   
+   ** Tree **
+   449. Serialize and Deserialize BST
+   
+   ** integer **
+   273. Integer to English Words
+   
+   ** BFS **
+   200. Number of Islands
+   
+   ** Two pointer**
+   125. Valid Palindrome
+   159. Longest Substring with At Most Two Distinct Characters
+   
+   ** Stack **
+   394. Decode String
+   150. Evaluate Reverse Polish Notation
+   
+   ** ArrayList **
+   118. Pascal's Triangle
+   
+   ** quick select **
+   kth largest，最后让用quick select写的
+   
+   ** String **
+   14. Longest Common Prefix
+   
+   ** Trie **
+   手机键盘给数字串找在字典里的单词。trie加dfs
+   
+   224 basic calculator
+   
+   coding的部分是原题，有一点点小改动。给一个List<Pair<String, String>> paris, 第一个string是manager，第二个string是reportee。建一个树。
+followup：A->B->C, 如果A->C，怎么办？当时没明白他要干嘛，我有点懵，我说那C就会在树立出现两次，建树的时候用个set去重吧。。
+   
+ ** System Design **
+如果多个不同地域的用户同时反馈 Yelp 的网站加载速度很慢，你要如何排查这个问题？我是从 CDN，数据库优化（结构及查询），和后端 caching 这几个方面谈的。其中面试官深入的问了数据库相关的问题，例如实现与原理。
+
+what happens when a webpage is very slow. 之前从网上搜集了一些东西,从连接，网站，SQL 语言有效性，数据库， 服务器做了回答。他问问的很细，基本上每个点都会让你举个例子还有解决方案。比如，我说到了SQL写的不够efficient时，他说举个例子。我就举了个不加index跟加index的区别。然后就又追问index的实现，数据结构之类了。这块我挺熟的，觉得说的不错。
+还有比如，我说到了可能是网页太大了，所以load很慢
+   
