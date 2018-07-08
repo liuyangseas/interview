@@ -29,6 +29,8 @@
    给一堆package，每个package安装有自己的dependency，然后根据这些dependency来决定安装package的顺序。告诉三姐我决定用拓扑排序来做
    210. Course Schedule II
    269. Alien Dictionary
+   图的拓扑排序
+   coding类似于 course schedule2
    
     把yelp 公司架构用N-child tree 实现。给你一个List<List<String>> list,  返回整个公司架构图，这里Alice是root， Ben是Alice的reportee， 一个Node可以有1～N 个子节点reportees， 公司人名不会重复。
 
