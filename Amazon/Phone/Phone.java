@@ -99,3 +99,98 @@ Leetcode 151
 102. Binary Tree Level Order Traversal
 
 
+LeetCode题. 1point 3acres 论坛
+LC1TwoSumHashMap
+LC2AddTwoNumbers
+LC2AddTwoNumbersII. 牛人云集,一亩三分地
+LC12IntegerToRoman
+LC13RomanToInteger
+LC15ThreeSum. 牛人云集,一亩三分地
+LC20ValidParentheses. 一亩-三分-地，独家发布
+LC21MergeTwoSortedLists
+LC23MergeKSortedList
+LC28ImplementstrStr
+LC33SearchRotatedSortedArray
+LC38CountAndSay
+LC40LRUCache. 一亩-三分-地，独家发布
+LC41FirstMissingPositive
+LC46Permutations
+LC47PermutationsII.1point3acres网
+LC49Anagram
+LC50Powerxn. from: 1point3acres 
+LC53MaximumSubarray
+LC56MergeIntervals
+LC64MinimumPathSum
+LC78Subset
+LC81SearchRotatedSortedArrayII.1point3acres网
+LC90SubsetsII
+LC94BinaryTreeInorderTraversal
+LC98ValidateBinarySearchTree
+LC101SymmetricTree
+LC102BinaryTreeLevelOrderTraversal
+LC103BinaryTreeZigzagLevelOrderTraversal
+LC107BinaryTreeLevelOrderTraversalII
+LC120Triangle
+LC125ValidPalindrome
+LC131PalindromePartitioning
+LC136FindSingleNumber
+LC153FindMinRotatedSortedArray
+LC165CompareVersionNumbers
+LC173BSTIterator
+LC200NumberIslands
+LC206ReverseLinkedList
+LC215KthLargestArray
+LC217ContainsDuplicate
+LC219ContainsDuplicateII
+LC220ContainsDuplicateIII
+LC230KthSmallestElementBST
+LC232ImplementQueueStacks
+LC234PalindromeLinkedList
+LC236LowestCommonAncestor
+LC268MissingNumber
+LC280WiggleSort
+LC297SerializeDeserializeBinaryTree
+LC322CoinChange
+LC324WiggleSortII
+LC338CountingBits
+. Waral 博客有更多文章,
+非LeetCode题
+ConvertBSTBinaryTree
+Count1
+CountAndSayII
+CountAndSayIII
+CountingSort
+Evaluation
+HotelRating. Waral 博客有更多文章,
+IdentifyString
+IncreaseAlphabet
+InPlaceSort
+InterString
+KWayMerge
+MaximumConsecutiveNumbers
+NameGenerator
+OccurancesSortedArray
+RemoveNodes
+SearchASubStringInword
+SingleNumberII
+SiteMap
+StackImplUsingQueues
+SumNumberString. visit 1point3acres for more.
+SwapKthElements
+
+phone:
+实现一个encrypt function，可以把一个string里面的每个字符向后移动offset位
+. 一亩-三分-地，独家发布
+s = 'fs', offset = 3, output = 'iv'.本文原创自1point3acres论坛
+
+面试官的要求（问出来的）. visit 1point3acres for more.
+string中不是字母的不要动
+offset可以为负数，那就是向前移动
+
+follow up:实现一个encrypt function，这次给一个段落paragraph,和一个offset. 这个段落中的句子只可能以句号问好感叹号结尾，第一个句子需要用input给的offset去encrypt，之后每个句子的用来encrypt的offset通过：. 牛人云集,一亩三分地
+. 围观我们@1point 3 acres
+上一个句子的最后字符 - 这个句子的第一个字符 来决定。
+
+面试官的要求：
+要处理corner case,比如一个段落某些句子为空： I am happy!.how about you?
+其实写到这里没时间了，没问清楚怎么处理前一个句子是空的情况，不过不是很复杂。就是输入很繁琐，而且题目没有描述出输入是怎么样的。。
