@@ -95,4 +95,12 @@ Linked List
 
 
 
+Onsite:
+1. There is a data stream and we can get the data in every second, the data contains bank name, bid prices and ask price. Write a function to return the maximum bid price and the minimum ask price in last 5 seconds.
+2. System design- Type head.
+3. return all the six digits numbers where the sum of the first three digits equals to the sum of the last three digits.
+4. OODesign - Snake game
+5. OODesign - an evnet registration system, the event has a maximum capacity. each person can take a maximum number of guests. Write register, deregister function to maintain the registered people in memory and write FinalList function to return the list which contains the people who can attend the event finally.
+
+
 
