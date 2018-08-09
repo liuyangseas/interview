@@ -1,0 +1,14 @@
+1. 246 -> III
+2. 676
+3. Homo   <Html>he <p> 1</p> </html>
+4. Game of Life
+5. findMax(double[] a){
+    double cur = Double.min;
+    for(double b : a){
+         if(b > cur){
+            cur = b;
+           }
+      }
+  if the distribution of data is uniform, expect execution time
+  DP(n) = (DP(n-1) + DP(n-2) .... + DP(1))/n;
+6. 图的最长路径，BFS topological sort
