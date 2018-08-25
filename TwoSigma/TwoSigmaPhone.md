@@ -49,3 +49,11 @@ Someone implement hash table and it is slow, why?
 - bad open addressing strategy
 
 Use hash table to store data, but there is much more data than the machine's RAM, how to deal with that?     add one more machine, rehash and reconstruct the hash table
+
+generate random number within a range [begin, end) without duplicate until you have all numbers from the range
+e.g. 1 to 5, 
+call 6 times: 2,3,1,4,5,3
+前五个数字不能有重复，直到第6个
+
+
+
