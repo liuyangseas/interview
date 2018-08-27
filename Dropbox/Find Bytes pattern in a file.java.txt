@@ -1,0 +1,76 @@
+import java.io.*;
+import java.util.*;
+
+/*
+ * To execute Java, please define "static void main" on a class
+ * named Solution.
+ *
+ * If you need more classes, simply define them inline.
+ */
+
+class Solution {
+  public static void main(String[] args) {
+    ArrayList<String> strings = new ArrayList<String>();
+    strings.add("Hello, World!");
+    strings.add("Welcome to CoderPad.");
+    strings.add("This pad is running Java 8.");
+
+    for (String string : strings) {
+      System.out.println(string);
+    }
+  }
+}
+
+
+/* 
+Your previous Plain Text content is preserved below:
+
+Hello Mingyang.
+
+Hi! This is Kevin from Dropbox. I just tried to call you, and I got your voicemail. I will try again.sure thanks!
+
+
+ */
+
+bool file_contains(String path, byte[] search_contents) {
+  // api will open this file
+  byte[] res = API.openStream(path);  -> hashmap
+    
+  // 1. load our data in the path and create a Trie
+ 
+  // 2. startWith(search_contents)
+  for(int i = 0; i < res.length; i++){
+    int start = i;
+     int j = 0;
+     while(res[start] == seach[j] && j < search.length){
+      start++;
+      j++;
+       if(j == search.length - 1){
+         return true;
+       }
+    }
+    
+  }
+  
+  return false;
+}
+
+1. convert to a string, contains
+2. loop through our content and compare
+3. Trie
+
+// path = /home/kevin/my_file.txt
+// contents of file:
+// Hi, my name is Kevin, and I work at Dropbox!
+// KMP 
+
+// search_contents = ['D', 'r', 'o', 'p']   ['o', 'P','D', 'r']  must be inorder
+// search_contents = ['t', ' ', 'D']
+
+1. File type
+2. split the path home -> root, 
+
+class Dir{
+  String name;
+  List<Dir> children;
+  
