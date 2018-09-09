@@ -1,0 +1,198 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+/***
+ * Given 2 sets of intervals.
+
+Interval is defined with left and right border and discrete points, like [2, 3], [0, 0], etc.
+
+Set of intervals is non intersected set of sorted intervals, for example: [0, 0], [2, 2], [5, 10] is a valid set of intervals, but [0, 0], [1, 2] is not valid, because you can write it as [0, 2]. [0, 2], [1, 5] is not valid as well, since these two intervals intersect.
+
+You need to find the AND or OR operation of these two sets. For example:
+
+1st set: [0, 2], [5, 10], [16, 20] 
+2nd set: [1, 5], [10, 18], [20, 23], [25,26]
+
+0 1 2     5 6 7 8 9 10                16 17 18 19 20
+  1 2 3 4 5         10 11 12 13 14 15 16 17 18    20 21 22 23
+  
+  1 2     5         10                16 17 18    20 
+  
+  [1,2] [5,5] [10,10], [16,18], [20, 20]
+
+AND Result: [1, 2], [5, 5], [10, 10], [16, 18], [20, 20]
+OR Result: [0, 23], [25, 26]
+
+1. cornor case overlapping of input
+2. size of both arrays?  different
+3. size input 
+4. both sorted
+ * */
+
+public class Solution {
+    public static void main(String args[] ) throws Exception {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+        System.out.println("hello");
+        Interval i1 = new Interval(0, 2);
+        Interval i2 = new Interval(5, 10);
+        Interval i3 = new Interval(16, 20);
+        Interval i33 = new Interval(22, 24);
+        Interval i4 = new Interval(1, 5);
+        Interval i5 = new Interval(10, 18);
+        Interval i6 = new Interval(20, 23);
+        List<Interval> s1 = new ArrayList<>();
+        s1.add(i1);
+        s1.add(i2);
+        s1.add(i3);
+        s1.add(i33);
+        
+        List<Interval> s2 = new ArrayList<>();
+        s2.add(i4);
+        s2.add(i5);
+        s2.add(i6);
+        
+        List<Interval> ret = or(s1, s2);
+        for (Interval t : ret) {
+            System.out.println(t.start + " " + t.end);
+        }
+    }
+    
+    public static class Interval {
+        int start;
+        int end;
+        
+        Interval(int start, int end) {
+            this.start = start;
+            this.end = end;
+        }
+    }
+    
+    public static List<Interval> and(List<Interval> s1, List<Interval> s2) {
+        // null check
+        
+        List<Interval> res = new ArrayList<>();
+        
+        int len1 = s1.size();
+        int len2 = s2.size();
+        
+        int i = 0;
+        int j = 0;
+        
+        while(i < len1 && j < len2){
+            if(s1.get(i).end < s2.get(j).start){
+                i++;
+            }else if(s1.get(i).start > s2.get(j).end){
+                j++;
+            }else{
+                int start = Math.max(s1.get(i).start, s2.get(j).start);
+                int end = Math.min(s1.get(i).end, s2.get(j).end);
+                Interval temp = new Interval(start, end);
+                res.add(temp);
+                
+                if(s1.get(i).start > s2.get(j).start){
+                    j++;
+                }else{
+                    i++;
+                }
+            }
+        }
+      /*  
+        if(i == len1){
+            while(j < len2){
+                res.add(s2.get(j));
+                j++;
+            }
+        }
+        
+        if(j == len2){
+            while(i < len1){
+                res.add(s1.get(i));
+                i++;
+            }
+        }
+    */
+        
+        return res;
+    }
+    
+    public static List<Interval> or(List<Interval> s1, List<Interval> s2) {
+        // null check
+        
+        List<Interval> res = new ArrayList<>();
+        
+        int len1 = s1.size();
+        int len2 = s2.size();
+        
+        int i = 0;
+        int j = 0;
+        
+        Interval temp = null;
+        
+        while(i < len1 && j < len2){
+            if(s1.get(i).end < s2.get(j).start){
+                if(temp != null){
+                    //merge temp with s1
+                    temp.start = Math.min(temp.start,s1.get(i).start);
+                    temp.end = Math.max(temp.end,s1.get(i).end);
+                     res.add(temp);
+                }else{
+                     temp = s1.get(i);
+                }
+
+                i++;
+            }else if(s1.get(i).start > s2.get(j).end){
+                 if(temp != null){
+                    //merge temp with s1
+                    temp.start = Math.min(temp.start,s2.get(j).start);
+                    temp.end = Math.max(temp.end,s2.get(j).end);
+                    res.add(temp);
+                }else{
+                     temp = s2.get(j);
+                }
+                
+                j++;
+            }else{
+                int first = Math.min(s1.get(i).start, s2.get(j).start);
+                int last = Math.max(s1.get(i).end, s2.get(j).end);
+                if(temp == null){
+                     temp = new Interval(first, last);
+                }else{
+                   int start = Math.min(temp.start, first);
+                   int end = Math.max(temp.end, last);
+                   temp.start = start;
+                   temp.end = end;
+                }
+                
+                if(s1.get(i).start > s2.get(j).start){
+                    j++;
+                }else{
+                    i++;
+                }
+            }
+        }
+        
+        // exit tricky 
+        if(temp != null){
+            res.add(temp);
+        }
+        
+        if(i == len1){
+            while(j < len2){
+                res.add(s2.get(j));
+                j++;
+            }
+        }
+        
+        if(j == len2){
+            while(i < len1){
+                res.add(s1.get(i));
+                i++;
+            }
+        }
+        
+        return res;
+    }
+}
