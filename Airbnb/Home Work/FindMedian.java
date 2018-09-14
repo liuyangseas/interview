@@ -15,6 +15,7 @@
  *
  * Maximum scanning time is 32
  */
+ 
 public class FindMedian {
   public double findMedian(int[] nums) {
     int len = 0;
