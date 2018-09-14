@@ -17,6 +17,71 @@ public class OrderMenu {
 		double[] price = {1.2, 1.11, 3.2, 4.4, 4.6, 4.9, 5.3, 8.9, 5.5, 5.7};
 		double target = 10.1;
 		System.out.println(getCombo(price, target));
+		
+		HashMap<String, Double> test = new HashMap<>();
+		
+		test.put("a",1.2);
+		test.put("b",1.11);
+		test.put("c",3.2);
+		test.put("d",4.4);
+		test.put("e",4.6);
+		test.put("f",4.9);
+		test.put("g",5.3);
+		test.put("h",8.9);
+		test.put("i",5.5);
+		test.put("j",5.7);
+		System.out.println(getCombo2(test, 10.1));
+	}
+	
+	public static class Dish{
+		String name;
+		Double price;
+		
+		public Dish(String val, Double num) {
+			this.name = val;
+			this.price = num;
+		}
+	}
+	
+	// 如果说我们的输入是一个HashMap，而不是我们的基本的那个array
+	public static List<ArrayList<String>> getCombo2(HashMap<String, Double> map, double target){
+		// convert from HashMap to Array
+		List<ArrayList<String>> res = new ArrayList<ArrayList<String>>();
+		List<Dish> list = new ArrayList<>();
+		Iterator it = map.entrySet().iterator();
+		for (Map.Entry<String, Double> entry : map.entrySet()) {
+		    String key = entry.getKey();
+		    Double value = entry.getValue();
+		    Dish dish = new Dish(key,value);
+		    list.add(dish);
+		}
+		
+		Collections.sort(list, new Comparator<Dish>() {
+	        public int compare(Dish o1, Dish o2) {
+	            // compare two instance of `Score` and return `int` as result.
+	            return (int) (o1.price - o2.price);
+	        }
+	    });
+		dfs(res, list,target,0.0, new ArrayList<>(), 0);
+		return res;
+	}
+	
+	public static void dfs(List<ArrayList<String>> res, List<Dish> list, double target, double cur, ArrayList<String> temp, int pos) {
+		if (Math.abs(cur - target) < acc) {
+			res.add(new ArrayList<>(temp));
+			return;
+		}
+		
+		for (int i = pos; i < list.size(); i++) {
+			// if contains duplicate, if(i > pos && price[i] == price[i-1])   continue;
+			if (cur + list.get(i).price > target + acc) {
+				break;
+			}
+			
+			temp.add(list.get(i).name);
+			dfs(res, list, target, cur + list.get(i).price, temp, i + 1);
+			temp.remove(temp.size() - 1);
+		}
 	}
 
 	// version 1 double compare  我们还是用浮点数精度的方法来做
@@ -86,4 +151,52 @@ public class OrderMenu {
 		      curCombo.remove(curCombo.size() - 1);
 		    }
 		  }
+}
+
+
+// 网上的代码
+class MenuOrder {
+
+	public List<List<Double>> getOrder(double[] prices, double target)
+	{
+		List<List<Double>> res = new ArrayList();
+		if (prices == null || prices.length == 0 || target <= 0)
+			return res;
+		
+		Arrays.sort(prices);
+		
+		search(prices, 0, new ArrayList(), target, res);
+		return res;
+		
+	}
+	
+	public void search(double[] prices, int start, ArrayList<Double> line, double target, List<List<Double>> res)
+	{
+		if (target < 0.01)
+		{
+			res.add(new ArrayList(line));
+			return;
+		}
+		
+		for(int i = start; i < prices.length; i++)
+		{
+			if (prices[i] > target)
+				break;
+			line.add(prices[i]);
+			search(prices, i, line, target - prices[i], res);
+			line.remove(line.size() -1);
+		}
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		MenuOrder mo = new MenuOrder();
+		double[] prices = new double[1];
+		prices[0] = 2.15;
+		
+		List<List<Double>> res = mo.getOrder(prices, 15.05);
+		System.out.println(res);
+	}
+
 }
