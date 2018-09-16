@@ -1,0 +1,106 @@
+import java.io.*;
+import java.util.*;
+
+/*
+ * To execute Java, please define "static void main" on a class
+ * named Solution.
+ *
+ * If you need more classes, simply define them inline.
+ */
+
+// A = [.70, 2.80, 4.90]
+// sum(A) = 8.4
+// roundedSum(A) = T = 8
+  
+//   Potential Roundings:
+// [1, 3, 4] -> [.3, .2, .9] -> rounding loss of 1.4
+// [1, 2, 5] -> [.3, .8, .1] -> rounding loss of 1.2
+// [0, 3, 5] -> [.7, .2, .1] -> rounding loss of 1.0
+
+  
+class Solution {
+  public static void main(String[] args) {
+    ArrayList<String> strings = new ArrayList<String>();
+    strings.add("Hello, World!");
+    strings.add("Welcome to CoderPad.");
+    strings.add("This pad is running Java 8.");
+    double[] array = {.70, 2.80, 4.90};
+    double[] array1 = {.76, 2.10, 4.90};
+    double[] array2 = {0.5, 0.1, 0.4};
+    int[] result = roundPrice(array2);
+    for (int val : result) {
+      System.out.println(val);
+    }
+  }
+  
+  public static int[] roundPrice(double[] prices){
+    if(prices == null || prices.length == 0){
+      return new int[0];
+    }
+    
+    int[] res = new int[prices.length];
+    Number[] numbers = new Number[prices.length];
+    // sum of rounded values
+    int sumRounded = 0;
+    double temp = 0;
+    
+    for(int i = 0; i < prices.length; i++){
+      numbers[i] = new Number(prices[i],i);
+      temp += prices[i];
+      sumRounded += (int)Math.round(prices[i]);
+      res[i] = (int)Math.round(prices[i]);
+    }
+    
+    int RoundedSum = (int)Math.round(temp);
+    int diff = Math.abs(sumRounded - RoundedSum);
+    int count = diff;
+    
+    if(sumRounded == RoundedSum){
+      return res;
+    }else if(sumRounded < RoundedSum){
+      // upgrade
+      Arrays.sort(numbers, (a,b) -> (Double.compare(b.frac , a.frac)));
+      for(int i = 0; i < prices.length; i++){
+        Number num = numbers[i];
+        if(num.frac < 0.5 && diff > 0){
+          res[num.index] = (int) (Math.ceil(num.val));
+          diff--;
+        }else{
+          res[num.index] = (int)(Math.round(num.val));
+        }
+      }
+    }else{
+      // downgrade
+      Arrays.sort(numbers, (a,b) -> (Double.compare(a.frac , b.frac)));
+       for(int i = 0; i < prices.length; i++){
+        Number num = numbers[i];
+        if(num.frac > 0.5 && count > 0){
+          res[num.index] = (int) (Math.floor(num.val));
+          count--;
+        }else{
+          res[num.index] = (int)(Math.round(num.val));
+        }
+      }
+    }
+    
+    return res;
+  }
+  
+ static class Number{
+    double val;
+    double frac;
+    int index;
+    Number(double val, int index){
+      this.val = val;
+      this.index = index;
+      this.frac = val - Math.floor(val);
+    }
+  }
+}
+
+
+/* 
+Your previous Plain Text content is preserved below:
+
+Hello Mingyang.
+ */
