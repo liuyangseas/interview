@@ -95,11 +95,11 @@ Input:
   }
 
 
-// 需要实现不删除原来的input
 package Airbnb;
 import java.util.*;
  
 public class PageSplit {
+	 // 前几种方法否没有排序，假设我们的结果是从大到小的排列，这样我们的这种方法是可行的，可是如果给的不是排好序的，我们必须用后面的方法
   public static void displayPages(List<String> input) {
     if (input == null || input.size() == 0) {
       return;
@@ -164,10 +164,13 @@ public class PageSplit {
 	      }
 	    }
 	  }
+  
+  // 这个方法的巧妙之处就在于利用iterator的方式来遍历我们的input，并且不断地remove掉不需要的东西
   public static List<String> displayPages3(List<String> input) {
 	    if (input == null || input.size() == 0) {
 	      return new ArrayList<>();
 	    }
+	    
 	    List<String> rs = new ArrayList<>();
 	    Set<String> visited = new HashSet<>();
 	    Iterator<String> iterator = input.iterator();
@@ -192,7 +195,9 @@ public class PageSplit {
 	      }
 	    }
 	    return rs;
-	  }
+  }
+
+  // 如果面试官说我们不能用iterator或者我们不能用这个所谓的remove掉原来的输入怎么做？另外一个就是我们的输入如果不是排好序的怎么办？ 这里我们才用了排序的
   static class Node{
 	  Node next;
 	  Node tail;
@@ -221,11 +226,13 @@ public class PageSplit {
 			  head.tail = temp;
 		  }
 	  }
+	  
 	  Queue<Node> cur = new PriorityQueue<>((n1 ,n2) -> (Double.compare(n2.score, n1.score)));
 	  Queue<Node> backup = new PriorityQueue<>((n1 ,n2) -> (Double.compare(n2.score, n1.score)));
 	  for (Node n : map.values()) {
 		  cur.offer(n);
 	  }
+	  
 	  List<String> rs = new ArrayList<>();
 	  int count = 0;
 	  while (rs.size() < input.size()) {
@@ -237,8 +244,10 @@ public class PageSplit {
 		  if (temp != null) {
 			  backup.offer(temp);
 		  }
+		  
 		  count++;
 		  if (count == 12) {
+			  // 把backup，也就是前面的内容我们全部拿出来，重新装到我们的cur里面，mingle在一起重新洗牌
 			  while (backup.size() > 0) {
 				  cur.offer(backup.poll());
 				  //System.out.println(1);
@@ -246,8 +255,10 @@ public class PageSplit {
 			  count = 0;
 			  continue;
 		  }
+		  
 		  if (cur.size() == 0) {
 			  Queue<Node> t = new PriorityQueue<>((n1 ,n2) -> (Double.compare(n2.score, n1.score)));
+			  // 如果我们的cur变成空了以后，我们backup还有。  
 			  t = cur;
 			  cur = backup;
 			  backup = t;
@@ -259,7 +270,7 @@ public class PageSplit {
            
   public static void main(String[] args) {
     String[] strs = new String[]{
-      "1,28,300.1,SanFrancisco",
+      "1,28,3400.1,SanFrancisco",
       "4,5,209.1,SanFrancisco",
       "20,7,208.1,SanFrancisco",
       "23,8,207.1,SanFrancisco",
@@ -313,7 +324,15 @@ public class PageSplit {
     	}
     }
     
-
+    System.out.println("=========================================================");
+    
+    for (int i = 0; i < r.size(); i++) {
+    	System.out.println(r.get(i));
+    	if ((i + 1) % 12 == 0) {
+    		System.out.println("new page:");
+    	}
+    }
+    
     for (int i = 0; i < r.size(); i++) {
     	if (!rs.get(i).equals(r.get(i))) {
     		System.out.println("fail");
