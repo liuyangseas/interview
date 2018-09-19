@@ -1,0 +1,153 @@
+import java.io.*;
+import java.util.*;
+import static java.util.Arrays.asList;
+
+/*
+
+Pro Host
+
+
+ 
+[[],[1,2,3],[4,5],[],[],[6],[7,8],[],[9],[10],[]]
+
+boolean hasNext()
+    return true if there is another element in the whole structure
+
+int next()
+    return the value of the next element in the structure
+
+void remove()
+    remove the last element returned by the iterator.
+    That is, remove the element that the previous next() returned
+    This method can be called only once per call to next(), 
+    otherwise an exception will be thrown.
+
+ 
+ */
+
+class Solution {
+  public static List<List<Integer>> getInput() {
+    List<List<Integer>> list = new ArrayList<List<Integer>>();
+    list.add(new ArrayList<Integer>());
+    list.add(new ArrayList<Integer>(asList(1,2,3)));
+    list.add(new ArrayList<Integer>(asList(4,5)));
+    list.add(new ArrayList<Integer>());
+    list.add(new ArrayList<Integer>());
+    list.add(new ArrayList<Integer>(asList(6)));
+    list.add(new ArrayList<Integer>(asList(7,8)));
+    list.add(new ArrayList<Integer>());
+    list.add(new ArrayList<Integer>(asList(9)));
+    list.add(new ArrayList<Integer>(asList(10)));
+    list.add(new ArrayList<Integer>());
+    return list;
+  }
+
+  public static void main(String[] args) {
+    List<List<Integer>> test = getInput();
+    MyIterator it = new MyIterator(test);
+    
+    test3();
+    // System.out.println(it.hasNext());
+    // System.out.println(it.next()); //1
+    // System.out.println(it.next()); //2
+    // System.out.println(it.next()); //3
+    // it.remove();
+    // System.out.println(it.hasNext());
+    // System.out.println(it.next()); 
+    // it.remove();
+    // System.out.println(it.hasNext());
+    // System.out.println(it.next());
+    // it.remove();
+    // System.out.println(it.hasNext());
+    // System.out.println(it.next());
+    // it.remove();
+    // 
+    //System.out.println(test);
+  }   
+  
+  private static void test3(){
+    List<List<Integer>> input = getInput();
+    MyIterator it = new MyIterator(input);
+    while (it.hasNext()){
+      if (it.next() % 2 == 0)
+        it.remove();
+    }
+    System.out.println(input);
+  }
+}
+
+class MyIterator implements Iterator<Integer>{
+  private int cur;
+  private int innerIndex;
+  private int outerIndex;
+  private int lastInnerIndex;
+  private int lastOuterIndex;
+  private List<List<Integer>> vector;
+  
+  public MyIterator(List<List<Integer>> input){
+    this.vector = input;
+    this.innerIndex = 0;
+    this.outerIndex = 0;
+    this.lastInnerIndex = -1;
+    this.lastOuterIndex = -1;
+  }
+  
+  public boolean hasNext(){
+    while(outerIndex < vector.size()){
+      if(innerIndex < vector.get(outerIndex).size()){
+        return true;
+      }else{
+        outerIndex++;
+        innerIndex = 0;
+      } 
+    }
+    
+    return false;
+}
+  
+  public Integer next(){
+    if(!hasNext()){
+      return -1;
+    }
+    
+    int temp = vector.get(outerIndex).get(innerIndex);
+    
+    lastOuterIndex = outerIndex;
+    lastInnerIndex = innerIndex;
+    
+    innerIndex++;
+    return temp;
+  }
+  
+  public void remove(){
+    // exit
+    if(lastOuterIndex == -1 && lastInnerIndex == -1){
+      throw new RuntimeException("You input shoule be invalid remove");
+    }
+    
+    vector.get(lastOuterIndex).remove(lastInnerIndex);
+    
+    
+    if(lastOuterIndex == outerIndex){
+      innerIndex--;
+    
+      // no number at this level
+      if(vector.get(lastOuterIndex).size() == 0){
+         outerIndex++;
+      }
+    }
+    
+    lastOuterIndex = -1;
+    lastInnerIndex = -1;
+  }
+}
+    
+    
+
+
+
+/* 
+Your previous Plain Text content is preserved below:
+
+Hello Mingyang.
+ */
