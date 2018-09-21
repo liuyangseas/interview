@@ -2,6 +2,8 @@
 0 = mixed
 1 = checked
 
+https://www.youtube.com/watch?v=8gNF8_9zhYE
+
 class TreeNode{
     int val;
     List<TreeNode> children;
