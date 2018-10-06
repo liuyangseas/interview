@@ -56,7 +56,66 @@ Here are some conditions to figure out, then the logic can be very straightforwa
                            or dp[i][j] = dp[i][j-1]   // in this case, a* counts as single a      aa vs a* 
                            or dp[i][j] = dp[i][j-2]   // in this case, a* counts as empty 就像我们的1的情况
 */
-Here is the solution
+
+/*
+这里我们升级了，我们多了一个加号
+Implement a simple regex parser which, given a string and a pattern, returns a boolean indicating
+whether the input matches the pattern. By simple, we mean that the regex can only contain special
+character: * (star), . (dot), + (plus). The star means what you'd expect, that there will be zero or more of
+previous character in that place in the pattern. The dot means any character for that position. The plus
+
+means one or more of previous character in that place in the pattern.
+*/
+
+public class Regular {
+    public static boolean isMatch(String s, String p) {
+       boolean[][] dp = new boolean[s.length() + 1][p.length() + 1];
+        dp[0][0] = true;
+     
+        // cornor case: aa vs a* 注意是从1开始的
+        for (int i = 1; i < p.length(); i+=2) {
+            if (p.charAt(i) == '*') {
+                dp[0][i + 1] = true;
+            } else {
+                break;
+            }
+        }
+		
+        // 这里我们需要小于等于我们的s的length
+        for (int i = 1; i <= s.length(); i++) {
+            for (int j = 1; j <= p.length(); j++) {
+                if (p.charAt(j - 1) == '*') {
+                    if (p.charAt(j - 2) == s.charAt(i - 1) || p.charAt(j - 2) == '.') {
+                        // 三种情况：1. match很多个 2. match0个，把自己都砍掉 3.只match一个，remove掉星号
+                        dp[i][j] = (dp[i - 1][j] || dp[i][j - 2] || dp[i][j-1]);
+                    } else {
+                        // 可以砍掉不需要的点
+                        dp[i][j] = dp[i][j - 2];
+                    }
+                } else if (p.charAt(j - 1) == '+') {
+                	if (p.charAt(j - 2) == s.charAt(i - 1) || p.charAt(j - 2) == '.') {
+                        // 上面三种情况，这里只有两种，没有第二个，只有13这两种情况，因为+不能代表remove掉前面的这个元素
+                		dp[i][j] = dp[i - 1][j] || dp[i][j - 1];
+                	} 
+                } else {
+                    if (p.charAt(j - 1) == s.charAt(i - 1) || p.charAt(j - 1) == '.') {
+                        dp[i][j] = dp[i - 1][j - 1];
+                    }
+                }
+            }
+        }
+		// 注意我们最后返回的值的范围
+        return dp[s.length()][p.length()];
+    }
+    
+    public static void main(String[] args) {
+    	String s = "a";
+    	String p = "aa+";
+    	System.out.println(isMatch(s, p));
+    }
+}
+
+// 其他参考solution
 public boolean isMatch(String s, String p) {
     if (s == null || p == null) {
         return false;
@@ -115,54 +174,3 @@ class Solution {
 }
 
 
-/*
-这里我们升级了，我们多了一个加号
-Implement a simple regex parser which, given a string and a pattern, returns a boolean indicating
-whether the input matches the pattern. By simple, we mean that the regex can only contain special
-character: * (star), . (dot), + (plus). The star means what you'd expect, that there will be zero or more of
-previous character in that place in the pattern. The dot means any character for that position. The plus
-
-means one or more of previous character in that place in the pattern.
-*/
-
-public class Regular {
-    public static boolean isMatch(String s, String p) {
-        boolean[][] dp = new boolean[s.length() + 1][p.length() + 1];
-        dp[0][0] = true;
-        for (int i = 1; i < p.length(); i += 2) {
-            if (p.charAt(i) == '*') {
-                dp[0][i + 1] = true;
-            } else {
-                break;
-            }
-        }
-        
-        for (int i = 1; i <= s.length(); i++) {
-            for (int j = 1; j <= p.length(); j++) {
-                if (p.charAt(j - 1) == '*') {
-                    if (p.charAt(j - 2) == s.charAt(i - 1) || p.charAt(j - 2) == '.') {
-                        dp[i][j] = dp[i - 1][j] || dp[i][j - 2];
-                    } else {
-                        dp[i][j] = dp[i][j - 2];
-                    }
-                } else if (p.charAt(j - 1) == '+') {
-                	if (p.charAt(j - 2) == s.charAt(i - 1) || p.charAt(j - 2) == '.') {
-                		dp[i][j] = dp[i - 1][j] || dp[i - 1][j - 2];
-                	} 
-                	
-                } else {
-                    if (p.charAt(j - 1) == s.charAt(i - 1) || p.charAt(j - 1) == '.') {
-                        dp[i][j] = dp[i - 1][j - 1];
-                    }
-                }
-            }
-        }
-        return dp[s.length()][p.length()];
-    }
-    
-    public static void main(String[] args) {
-    	String s = "a";
-    	String p = "aa+";
-    	System.out.println(isMatch(s, p));
-    }
-}
