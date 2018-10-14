@@ -17,4 +17,17 @@ https://www.digitalocean.com/community/tutorials/a-comparison-of-nosql-database-
 
 http://highscalability.com/scaling-twitter-making-twitter-10000-percent-faster
 
+http://www.lecloud.net/tagged/scalability
+
+https://www.1point3acres.com/bbs/thread-184542-1-1.html
+
+https://www.1point3acres.com/bbs/thread-210083-1-1.html
+
+https://www.1point3acres.com/bbs/thread-171320-1-1.html
+
+https://www.1point3acres.com/bbs/thread-169343-1-1.html
+
+https://www.1point3acres.com/bbs/thread-208829-1-1.html
+
+
 
