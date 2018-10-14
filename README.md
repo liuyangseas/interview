@@ -15,4 +15,6 @@ https://mp.weixin.qq.com/s/TBCEwLVAXdsTszRVpXhVug
 NoSql difference：
 https://www.digitalocean.com/community/tutorials/a-comparison-of-nosql-database-management-systems-and-models
 
+http://highscalability.com/scaling-twitter-making-twitter-10000-percent-faster
+
 
