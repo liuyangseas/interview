@@ -70,3 +70,74 @@ head first java
 
 system design，设计一个读写log的系统
 逆波兰表达式
+
+
+第一轮是skyline，我答的不好。。。
+第二轮是max depth of binary tree和intersection of two list
+第三轮是设计tic tac toe。第二轮和第三轮我觉得答的还行
+第四轮是有parent pointer inorder traversal。结果我答的一般，有bug，然后没空改了。。。
+
+1.罗马数字转10禁止，以及如何验证罗马数字是valid
+2. 2SUM  分布式环境下的实现以及效率 scalability和有可能出现的问题
+3. building outline 求最优解
+
+多线程的hash table
+最短路径
+相同二叉树
+把list变成tree
+重叠长方形，给出任意两个长方形的位置，然后求他们的重叠的部分
+
+1. merge two list
+2. 10进制数字转换成26进制abc
+3.LRU Cache
+
+1. tic tac toe
+2. reverse list what if the list has cycle
+3. Tries implement
+4. 2-d matrix and how to find a way out
+5. how to validate a XML
+
+1.Skyline
+2.count and say
+3.preorder in-order BST convert
+4. how to implement windows management
+
+1.word search II
+2. decode ways I follow up II
+3. 给一个string写出所有大小写组合
+4.给一个int random_next_int(int a,int b) api. random n个int，memory performance  distributed random，说白了就是map reduce random function
+
+buy stock
+maximum sum
+
+1.读取一个特别大的文件，存下来每个词的行号和offset，先写了一下代码怎么存在一个map里面，然后讨论大数据怎么存，怎么merge、partition data
+2. course schedule II
+3. Lowest common ancestor  + word break II
+4. implement a trie tree, 外面包裹了一些没啥用的描述，二叉树里面有重复元素，找一条任意点到任意点的最长的repeated path
+
+1. LC 36，37
+2. LC  362
+3. LC 203
+4. 很多设计题  问答的形式，一个一个的问
+
+1. 给一个character board和一个dictionary找出所有单词，自己设计dictioanry，直接用trie
+2. decode ways  I  follow up II
+3. 给一个string 输出所有大小写组合
+4.给一个int random_next_int(int a, int b)  api     random n 个 int，主要是follow up    memory  perfomance  最后我给的是 distributed random说白了就是Mapreduce random function
+
+
+find missing number
+find duplicate character in two strings
+bitmap
+
+convert leaf node of binary tree to linked list
+no global/ static variables
+
+graph shortest path, return path and steps
+
+topological sort
+
+resume, project deep dive
+
+
+1.
