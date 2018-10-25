@@ -12,3 +12,63 @@
   if the distribution of data is uniform, expect execution time
   DP(n) = (DP(n-1) + DP(n-2) .... + DP(1))/n;
 6. 图的最长路径，BFS topological sort
+
+
+
+
+Google onsite面经
+
+谷歌onsite的一手面经题目longest substring with at most k distinct characters及其 follow up
+
+1.     扫地机器人：
+public Interface Robot {
+           boolean move();
+           void clean();
+          
+           void turnLeft(int i); // i present  how many times the robot turns;
+           void turnRight(int i)
+                                
+}
+以上是给的interface, 写一个method 使机器人把整个room clean一遍.
+条件： 房间的坐标如何表示？ 输入是start point
+Move当返回true的时候表示可以继续走，如果返回false就表示不能走
+2.     Leetcode 32. (两种解)  DP上来就秒了  stack
+3.     给1 - 100 大小的font, 给一个string, 和固定长宽的屏幕, 求用string尽最大可能的把屏幕填满并且满足长和宽都不超过屏幕时的font是多少？(String中每个字母的宽度是不一样, 长度是一样的)
+有两个helper function：
+1.     int findWidth(char c, int font);
+2.     int findHeight(char c int font);
+
+固定长宽的屏幕自己定
+如何判断满足条件？
+int index = 0;
+int totalLine = 0;
+while(index < s.length()) {
+    int totalLen = 0;
+while( totalLen < screen.len) {
+        totalLen += findWidth(s.charAt(index++), mid);
+}
+totalLine++;
+
+
+}
+4.     先给你讲一讲照相机原理, 然后上题说现在input一个byte array, 每个格子代表红, 绿, 黑， 红的格子只能记录红的
+public void camera (byte[][] in, byte[][] A, byte[][] B, byte[][] C) {
+    
+}
+
+5.     Lc 222
+
+
+黑白棋   如果两个黑棋连成一条线，那么中间的白的就全部变成黑的了
+很多点，然后找两个点的连线吧剩余点均分
+城市天际线的变种
+很多人来坐同一张长椅，每个人来的时候都想坐当前时刻最宽敞的地方  比如内存不够怎么多，有很多张长崎怎么办
+
+
+1. leetcode skyline从左和下看的所有的建筑的高度，二分
+2. design google sheet
+3.高频 椅子题  坐距离最远的位置
+4.线段树，求和稍微变了一点
+5. https://stackoverflow.com/questions/10880514/determine-elements-of-a-matrix-when-sum-of-rows-and-columns-are-given
+
+
