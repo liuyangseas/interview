@@ -33,4 +33,6 @@ https://www.1point3acres.com/bbs/thread-208829-1-1.html
 NoSQL区别
 https://www.digitalocean.com/community/tutorials/a-comparison-of-nosql-database-management-systems-and-models
 
+Redis Async Communication
+https://medium.com/netflix-techblog/caching-for-a-global-netflix-7bcc457012f1
 
