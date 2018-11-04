@@ -36,3 +36,7 @@ https://www.digitalocean.com/community/tutorials/a-comparison-of-nosql-database-
 Redis Async Communication
 https://medium.com/netflix-techblog/caching-for-a-global-netflix-7bcc457012f1
 
+Rate Limiter:
+https://blog.figma.com/an-alternative-approach-to-rate-limiting-f8a06cf7c94c
+https://blog.getambassador.io/rate-limiting-a-useful-tool-with-distributed-systems-6be2b1a4f5f4
+https://konghq.com/blog/how-to-design-a-scalable-rate-limiting-algorithm/
