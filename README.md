@@ -1,5 +1,8 @@
 # interview
 
+行为面试：
+https://www.youtube.com/watch?v=PJKYqLP6MRE
+
 系统设计链接：
 https://www.jianshu.com/p/7332dcb978b2
 
