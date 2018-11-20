@@ -43,3 +43,15 @@ Rate Limiter:
 https://blog.figma.com/an-alternative-approach-to-rate-limiting-f8a06cf7c94c
 https://blog.getambassador.io/rate-limiting-a-useful-tool-with-distributed-systems-6be2b1a4f5f4
 https://konghq.com/blog/how-to-design-a-scalable-rate-limiting-algorithm/
+
+关于多线程的问题，我们需要了解这么一个情况：
+比如： https://stackoverflow.com/questions/1884889/iterating-over-and-removing-from-a-map
+terating over and removing from a map [duplicate]
+
+那我们最好用iterator来做就更完美了
+for(Iterator<Map.Entry<String, String>> it = map.entrySet().iterator(); it.hasNext(); ) {
+    Map.Entry<String, String> entry = it.next();
+    if(entry.getKey().equals("test")) {
+        it.remove();
+    }
+}
