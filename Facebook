@@ -1,0 +1,18 @@
+## 系统设计
+1. 设计电影院出票系统
+2. 设计利口contest
+3. 设计 typeahead
+4. 设计一个售票系统
+
+
+
+
+## 算法和数据结构
+1. 297. Serialize and Deserialize Binary Tree
+2. 整数除法求商和余数，不用除法或模
+3. 680. Valid Palindrome II
+4. 找离远点最近的k个点
+5. 给一个ordering array，然后check 给定的list of words是否遵循这个order
+6. add two binary numbers
+7. next permutation
+8. 给一个array，问是否可以分成两个subarray，使得和相等
