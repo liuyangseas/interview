@@ -1,0 +1,17 @@
+##OODesign
+1. design a parking lot
+2. 设计一个机场
+
+
+## Coding
+1. 实现math.pow(a,b)
+2.  copy list with random pointer
+3. 3. Longest Substring Without Repeating Characters
+4. 手机键盘，和一串数字，输出所有能组成的英语单词，英语字典可以自定义结构
+5. 给一个英语单词黑名单，判断一个个review是否应该被通过
+
+
+## System design
+1. 设计一个交通管理系统 （类似停车场或者机场那种）
+2. 设计亚麻产品推荐 （直接开了个亚麻首页说给我设计介个推荐系统）
+3. 设计一个视频系统，主要功能有上传，搜索和观看
