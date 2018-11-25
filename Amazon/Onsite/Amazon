@@ -1,17 +1,182 @@
 ##OODesign
 1. design a parking lot
 2. 设计一个机场
+3. chess
+4. 一个人开车
+5. 设计一个咖啡馆
+6. 有PB size 的知识库， 一篇200KB的文章， 要检查 文章有没有抄袭。 要给数据怎么设计， query 怎么写
+7. 亚麻无人商店
+8. 设计file system
+9.设计查找电影的系统
+10.设计亚麻Locker，要求写三个函数
+11.设计文件类和一个搜索方法根据时间大小等不同选项来筛选文件
+12.OOD棋类游戏
+13.家具
+14.要设计如果表示点和圆圈。设计加入点的操作，加入圆圈的操作。图里面有很多点和圆圈。设计数据结构和算法，解决以下问题：给出这个图中的两个点，求这两个点画穿过多少个圆圈。
+15. 设计如何start某个aws 的service， 怎么monitor instances 有没有 down，一个大的cluster怎么upgrade
+16.假设亚麻own很多机场，怎么设计一个安排航班的系统，来了一个航班request，怎么安排
+17.设计如果统计用户搜索的top k频率的word，scale，简单了一下map reduce里大概算法部分
+18.Implement Amazon Locker
+19.RPG 游戏中装备类的设计， 不需要管人物，只要管设计装备类就行了
+20.设计一个 pizza 类和一个 topping 类，pizza 上可以加 topping 啦之类的操作
+21.后端处理motion sensor 数据。要求支持自动开灯，人走了关灯
+22.有一个促销活动，有n个数目的产品。问怎么样设系统来支持这个促销活动
+23.
+24.
+25.
+
+
+
 
 
 ## Coding
 1. 实现math.pow(a,b)
-2.  copy list with random pointer
-3. 3. Longest Substring Without Repeating Characters
+2. copy list with random pointer
+3. Longest Substring Without Repeating Characters
 4. 手机键盘，和一串数字，输出所有能组成的英语单词，英语字典可以自定义结构
 5. 给一个英语单词黑名单，判断一个个review是否应该被通过
+6. 给你2个log files，log file有每一个用户的行为，怎么求同时在2个log files中都出现的用户。抽离出中心思想就是intersection of two arrays。
+   follow-up：如果有多个文件，比如1000个文件，怎么求？我给的思路是先给每个log file分别排序，然后用Heap做。
+7.  Boggle Game，用Trie + DFS的解法。
+8. 用Heap来实现Stack，Stack的功能包括Push(int num), Pop(), getMax(), getAverage()，
+9. K distinct substring
+10. maximum average subtree
+11. topologic sort
+12. 卖股票
+13. easy难度的hashmap
+14. separate string 分隔符按输入的分割string
+15. 一堆 stock 求kwindow的midian 返回list
+16. Word path的个题 给dictionary 每次只能改变一个字符 最后找到目标词
+17. 200. Number of Islands
+18. 843. Guess the Word 但是游戏规则是hangman的规则，要求以最少步数完成
+19. 说他们现在有一堆log记录用户id，时间戳和访问的页面。让求最popular的3 sequence，就是同一个用户连续访问的三个页面。
+这个也做了好久，follow up怎么优化，提前留下的优化余地上场
+20. 212. Word Search II
+21. URL长变短短变长
+22. 在一堆词里面找给定词的anagram 花了点儿时间做测试，讨论各种string case。followup, 如果数据量太大怎么办？最后一点儿时间，two sum 变种。
+23. 写一个能选出销售topN商品的功能，销售量也是一直在加的。followup, 写最近一个小时销售量topN
+24. 在先升后降中找最大值， follow up, 如果有相同的值怎么办
+25. 295. Find Median from Data Stream
+26. 297. Serialize and Deserialize Binary Tree
+27. 求gcd的题
+28. 两个字符串数组，每个字符串长度不一。要求把第一个数组里的字符串拷贝到第二个数组里，条件是拷贝的字符串长度小于等于第二个数组里的字符串长度，
+然后求所有合法拷贝全部加起来最长
+29.200. Number of Islands 8个方向（含对角线），dfs，followup怎样减少重复查询
+30. two sum 变形
+31.116. Populating Next Right Pointers in Each Node
+32.phonebook, 可以存姓名+电话，通过姓名查电话
+33.你有一堆编号的盒子，一堆编号的巧克力，巧克力按顺序放盒子里，每个盒子数量任意，现在给你一个编号的巧克力，找在哪个盒子里，
+34.一个单项linkedlist，如果一个node右边有比它大的，这个node要删除，最后返回这个linkedlist，要做到O(1)space
+35.滑动窗口求和/滑动窗口求最小值
+36.岛屿的BFS的题目，要求输出一群岛屿的list
+37.number of the islands in a matrix - 原题
+38.给你一栋楼每个用户的用电起始时间和用电量 求整栋楼的峰值最大用电量
+39.柱形图最大矩形面积
+40.阿拉伯数字转英文
+41.maxHeap
+42.dfs
+43.recursion
+44.最长回文子串
+45.链表是否有环
+46.一个长数据串里找最长的子串，其中子串每个数都高于某个阈值
+47.invert Binary Tree
+48.Text Justification
+49.烂桔子问题
+50.给个目录，找出所有文件内容相同的文件，写完代码后再来一道二叉树返回k层的最大值
+51.写LRU
+52.Sliding window maximum, 要求 O(n) 时间的解
+53.Delete treeNode within a range
+54.k smallest
+55. train station
+56. word break II
+57.两个链表求和 445. Add Two Numbers II
+58.3. Longest Substring Without Repeating Characters
+59.生命游戏变种，简单版的
+60.212. Word Search II
+61.包装过的top k
+62.给list of strings，判断是不是存在一个string是另一个string的prefix
+63. find distance between two nodes in a BST
+64.rotate matrix 90 degree
+65.code execution profiling：execution logs长这样:<method>, <enter or exit>, <timestamp> 
+66.机器人在一个二维仓库里面找货物。输入：[货物1， 货物2， 货物3，。。。]输出：[找到货物1的路径，找到货物2的路径，找到货物3的路径] BFS搞定。
+67.公司樹  求兩職員的最低共同主管  follow up 求多個職員最低共同主管
+68.上色題 給節點數 和 相鄰關係  兩種顏色  相鄰點不可同顏色  求是否可以全部上色   follow up  若是 n 個顏色如何解  只說做法未寫代碼
+69.給兩組list of task  每個task 包含需使用的記憶體和id  返回所有兩兩組合  使記憶體總和等於某給定的值
+70.provide list of integer as different sizes(unsorted) of balls..then each time you merge the two arbitrary balls(any two indexes), so eventually it will be one ball, right? 
+How to merge so that to minimize the total score. How to calculate the score, totalscore = mergedScore0 + mergedScore1 + mergedScore2 + mergedScore-n-1. e.g. 4 3 2 5 1, 
+if we simply merge from left to right, then 7 + 9 + 14 + 15, but this is not the optimum solution. 
+71.implement heapify
+72.2D matrix rotate 90 degree
+73.Meeting Room II
+74.675. Cut Off Trees for Golf Event
+75.二叉樹LCA
+76.實現 hash table
+77.57. Insert Interval
+78.3. Longest Substring Without Repeating Characters 变形
+79.median of number stream直接用两个 priority queue 解决了
+80.colored tree，求最大 diversity 的 path，dfs 即可
+81.给字典和矩阵，在矩阵里找出字典里的词，写了最基本的 dfs。然后讨论如何优化，就是限制起始点，限定搜索层数，用 trie 来尽早停止无效的搜索等等
+82.copy linked list with random pointer
+83.给一个完全没有规则的图形，和一个点，一个api。 调用api 可以告诉你点在不在边界上。写一个程序返回点在不在图形内部
+84.给一个 父子 关系的 stream， 建立树
+85.找出一个排好序的从0到n的序列的missing number
+86.给一个chess board， 实现 isCheck().
+87.909. Snakes and Ladders
+88.实现一个class，要求1.往里面添加字符串2.输出当前只出现过一次的字符串，如果有多个则返回最早添加的那个。follow up问如果数据量太大怎么办
+89.给一个文件夹路径，大小和正则表达式，返回文件夹里所有名字符合某个正则表达式以及大小超过给定数字的文件名。follow up文件操作会吗？regex会吗？如果文件筛选条件增加或者改变该怎么做？
+90.33. Search in Rotated Sorted Array
+91.镜子树
+92.字典词
+93. # of islands, 问了递归的方法和非递归的方法
+94.给一个string，和一组关键字，要求找到最短的包含所有关键字的substring，输出是长度；
+95.2 sum，3 sum 然后展开问了一下n sum，最后follow up没有写代码
+96.给一堆日志，是用户打给某个部门的，然后求频率最高的一个顺序
+97.给一个BST和一个target value K，求bst两个点，这两个点的差是这个K
+98.Top K。原题是求top百分之N，其实也就是TopK。 分析下三种解法sort + heap + quick select的tradeoff， 然后让写了heap解法
+99.String to Integer，follow up：给你一个文件每行以数字或空格开始（可以理解为行号），把文件每行按行号排序
+100.search rotated array
+101.给一个无序 int array和一个interval，eg array: [5, 3, 1, 6, 8], interval: [2, 7], 找出array里所有在interval里面但是却missing的int，对于input应该返回[4, 7].
+102.编码解决thewordsearch.com这种问题
+103.
+
+
+
+
+
+
+
+
 
 
 ## System design
 1. 设计一个交通管理系统 （类似停车场或者机场那种）
 2. 设计亚麻产品推荐 （直接开了个亚麻首页说给我设计介个推荐系统）
 3. 设计一个视频系统，主要功能有上传，搜索和观看
+4. design news feed system
+5. 怎样防止attack 就是人发请求超过一定数目就把他屏蔽 然后正常的就响应
+6. 设计日志读写
+7. 搞一个股票查询系统 (开盘价 收盘价 最高价 最低价)
+8.设计uber
+9.设计uber的各个api
+10.Design a photo distributed staroge service like Instagram
+11.设计一个购物车里面可以显示其他客户也购买的商品
+12.设计一个读比写多的system
+13.设计一个买票系统
+14.设计一个cache file系统
+15.design图的API， 以便找从给出的一个点，找到他的neighbour的路径
+16.设计一个Netflix或者Youtube这样的视频服务
+17.pause/resume 視頻 如何存/讀取
+18.设计一个uber
+19.設計财务数据streaming pipeline 
+20.亚马逊仓库管理系统， 对每个商品如何显示有没有库存和即使没有库存，如果在未来有新加入的同样商品， 如何让用户知道
+21.题是一个餐厅，门外有等候区，餐厅有若干个服务员，以及若干桌子。设计一个系统来模拟这个餐厅的运行
+22.设计在线卖书系统
+23.distributed message system
+24.给亚麻商品网页上加个功能，要显示一个物品是不是卖完了，卖完了就有个小图标表示sold out
+25.聊天系统design，后面主要在讨论数据库的设计
+26.短网址服务
+27.设计停车场和打车服务
+
+
+
+
