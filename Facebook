@@ -1,11 +1,39 @@
 ## 系统设计
 1. 设计电影院出票系统
 2. 设计利口contest
-3. 设计 typeahead
+3. 设计 typeahead ：给一个String字典和它们出现的次数，设计类似typehead，要求对每一个请求的prefix String能返回前5个最高频的String，按频率从高到低排序。lz用trie，在建trie过程中在trie node中预存5个最高频解决。
+followup是如果字典超级大怎么办 -- sharding
 4. 设计一个售票系统
-
-
-
+5. 题目是设计一个service, 供用户查询任何时间段内的数据信息(之前面过类似的, 查询股票信息系统啥的), 难点在于aggregator知不知道, 怎么数据库sharding, c
+ache怎么用, 怎么做分布式, 还有就是要分析和算QPS, 怎么优化存储, retention的处理等等.
+6. 设计一个下载器的后端
+7. how to design news feed  ML
+8. facebook checkin service   location service，感觉面试官希望我答quadtree   ML
+9. 设计一个api然后user可以给你个URL，你把URL内的内容返回，比如图片或者视频
+10. page recommendation
+11. 给FB Profile页面设计一个板块，显示该用户过去7天内所听的次数最多的10首歌。假设数据源来自spotify
+12. 交通模拟系统
+13. design a insurance management system
+14. Design Instagram
+15. 爬虫设计
+16. 设计live comments，着重问如何减少latency，实现近real-time的comment 显示
+17. 为一手机端应用设计后台API，类似朋友圈(story)，要求每个story能显示 title, 作者avatar, 文字，图片，视频。能pagination
+18. System Design:POI.
+19. 设计 亚麻 商品 推荐系统
+20. 设计 推特 状态 搜索    design search FB status
+21. 最基本的经典题目，长URL转成短URL
+22. 设计memcached网站有一亿个网页，一万个机器，怎么下载，要求平均分配工作量
+23. ystem design： goe 题： 给你 p（latitude，longitude） search 一个 半径 n miles 的circle 内所有 p（latitude，longitude）。 如何get database， 怎么存 database，设计怎么search。 map reduce 之类
+24. Design a search engine that can search posts on Facebook, ie. inverse index, how to partition, analyze the storage requirement with Facebook posts qps, size, etc. Analyze how many searchers are needed.
+25. Design a job scheduler, given a set of hosts and available CPU capacity, and a job each with the CPU requirement. Assign a host in a way that is most efficient, ie. minimize fragmentation. The method can be called multiple times. Then, given another method called, reclaimJob, implement a method that can assign multiple jobs which come into the system at different timestamps (given). If a job cannot be scheduled when it arrives, it can be delayed. Print out the assignment.
+26. 对于所有的FacebookPages，设计一个服务可以显示访问数据，比如按性别、时间、地点显示访问数以及独立访问数
+27. Facebook messanger
+28. design an online coding compition platform
+29. 给一个API， 根据输入的语种，翻译出相应的语言的文字。
+30. design一个类似approval的系统，写出api，和pass进去的parameter，然后设计database table
+31. 设计一个tag系统，给定一个时间段返回top100的tag
+32. privacy control
+33. 设计一个统计广告日点击量的系统
 
 ## 算法和数据结构
 1. 297. Serialize and Deserialize Binary Tree
@@ -16,3 +44,82 @@
 6. add two binary numbers
 7. next permutation
 8. 给一个array，问是否可以分成两个subarray，使得和相等
+9. merge K sorted arrays  lintcode
+10. 求一个binary tree 里离一个给定node距离小于K的所有节点的集合, 这个也是简单到想笑, 主要就是创建一个hash table存下parent node, 然后用BFS就好了.
+11. 31. Next Permutation
+12. 238. Product of Array Except Self
+13. 301. Remove Invalid Parentheses   只要求返回一个结果
+14. 98. Validate Binary Search Tree
+15. Integer to english
+16. decode string, follow up: input is a char stream
+17. Trie, search with 'a'-'z' and '.'
+18. preorder binary tree iterator
+19. 第一题是把binary tree 按照每列的顺序print出来。
+20. 第二题是list里找有没有sub list（需要连续），sum等于target number
+21. clone graph
+22. Maximum Size Subarray Sum Equals k
+23. find the longest consective increasing array in a matrix
+24. task scheduler  变型，按顺序输出，并且每个任务名字是个string，不是单个字母，比原题简单
+25. LC266
+26. LC133
+27. LC239
+28. LC5
+29. LC 158
+30. LC 227
+31. 给一个integer数组 找出最长连续上升的子串长度
+32. LC 415
+33. LC 426
+34. 二叉搜索树 求next节点
+35. 无向图中三角形的个数
+36. 滑动窗口中位数
+37. 734 Sentence Similarity
+38. LC 752
+39. print all paths in binary tree
+40. given a matrix, start point and end point. find whether there is a path from start point to end point
+41. alien dictionary
+42. meeting room. 给一堆interval, 找到最少需要几个meeting rooms.
+43. add binary string
+44. 判断一个字符串是否是回文
+45. 给一个数组和数字K，求一个连续子数组之和等于K。subarray + 双指针完成了。另外当K=0时候，需要注意下Corner case。
+46. LC 17
+47. LC 127
+48. LC 278
+49. LC 426
+50. Find the longest vocation days
+51. LC 124
+52. LC 297
+53. LC 238
+54. 10. Regular Expression Matching
+55. 一个，增加/删除/替换操作均认为是一次动作，最少几次动作可以使之成为回文字符串
+56.  leetcode 扎气球
+57. 636. Exclusive Time of Functions!!!!!
+58. 53. Maximum Subarray
+59. 152. Maximum Product Subarray
+60. 91. Decode Ways
+61. 639. Decode Ways II
+62. 211. Add and Search Word - Data structure design
+63. 给一列数字，判断是否可以插入加减符号来得到最终结果
+64. 把一个数字转成英文单词表述
+65. 从俩有区间的array 找出所有重複的区-
+66. 找BST的下一个大的数
+67. 314. Binary Tree Vertical Order Traversal
+68. Alternate a singly-linked list (LC 143)
+69. Clone a doubly linked list with an additional child pointer, each of the child pointer can point to another doubly linked list. 
+70. 编程：双向链表转换为一颗平衡的树
+71.  find if there is a circle in a graph
+72.76. Minimum Window Substring
+73. 1，2，3，4，5，6，7，8，9，0，中间任意使用+，-，或者空白，空白表示把前后两个数字连起来，让表达式等于一个目标值
+74. 0， 1 矩阵中，找最左边的1的位置
+75. 给一个新的字母表顺序，判断给定的字符串数组是否是排好序的（按照新的顺序）
++  如果给一组排好序的字符串，如何找出未知的新字母表顺序。只讲思路，没写代码。 拓扑排序
+76. 给一数组，和最长容许的subarray长度，依次找出所有subarray的最大值存入返回数组中。 Sliding window maximum
+77.43. Multiply Strings
+78. 332. Reconstruct Itinerary
+79. 384. Shuffle an Array
+80. 找最近的k个points
+81. 检查BST。两个sorted array找交集。
+82. isValidNumber + 拓扑里面有环
+83.  strstr
+84. 32. Longest Valid Parentheses
+85. 158. Read N Characters Given Read4 II - Call multiple times
+
